@@ -1,195 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Resonance Studios</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 body {
-  background: #0f1720;
-  color: #fff;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f1720;
+    color: white;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
-  height: 100vh;
-  background: linear-gradient(
-      135deg,
-      rgba(13, 27, 42, 0.6),
-      rgba(42, 90, 127, 0.4)
-    ),
-    url("images/hero-image.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.75)
+    ), url("hero-image.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  letter-spacing: 2px;
+    font-size: 3rem;
+    margin: 0;
 }
 
 .hero p {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  opacity: 0.9;
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
 
-/* SECTION */
+/* SECTIONS */
 section {
-  padding: 60px 20px;
+    padding: 50px 20px;
 }
 
-.section-title {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  text-align: center;
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* GRID */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
 }
 
-.card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
+.grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s ease;
 }
 
-.card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.card:hover img {
-  transform: scale(1.05);
+.grid img:hover {
+    transform: scale(1.04);
 }
 
 /* CONTACT */
 .contact {
-  text-align: center;
-  padding: 60px 20px;
+    text-align: center;
+    padding: 50px 20px;
 }
 
 .contact a {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  background: #2a5a7f;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 16px;
+    background: #2a5a7f;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
 }
-
 </style>
+
 </head>
 
 <body>
 
 <!-- HERO -->
 <div class="hero">
-  <h1>Resonance Studios</h1>
-  <p>Creating Timeless Legacies</p>
+    <h1>Resonance Studios</h1>
+    <p>Creating Timeless Legacies</p>
 </div>
 
-<!-- CONCEPT WORK -->
+<!-- CONCEPT WORK (10) -->
 <section>
-  <h2 class="section-title">Concept Work</h2>
-  <div class="grid">
-    <div class="card"><img src="images/concept-1.jpg"></div>
-    <div class="card"><img src="images/concept-2.jpg"></div>
-    <div class="card"><img src="images/concept-3.jpg"></div>
-    <div class="card"><img src="images/concept-4.jpg"></div>
-    <div class="card"><img src="images/concept-5.jpg"></div>
-    <div class="card"><img src="images/concept-6.jpg"></div>
-    <div class="card"><img src="images/concept-7.jpg"></div>
-    <div class="card"><img src="images/concept-8.jpg"></div>
-    <div class="card"><img src="images/concept-9.jpg"></div>
-    <div class="card"><img src="images/concept-10.jpg"></div>
-  </div>
+    <h2>Concept Work</h2>
+    <div class="grid">
+        <img src="concept-1.jpg">
+        <img src="concept-2.jpg">
+        <img src="concept-3.jpg">
+        <img src="concept-4.jpg">
+        <img src="concept-5.jpg">
+        <img src="concept-6.jpg">
+        <img src="concept-7.jpg">
+        <img src="concept-8.jpg">
+        <img src="concept-9.jpg">
+        <img src="concept-10.jpg">
+    </div>
 </section>
 
-<!-- PORTRAITS -->
+<!-- PORTRAITS (6) -->
 <section>
-  <h2 class="section-title">Portraits</h2>
-  <div class="grid">
-    <div class="card"><img src="images/portrait-1.jpg"></div>
-    <div class="card"><img src="images/portrait-2.jpg"></div>
-    <div class="card"><img src="images/portrait-3.jpg"></div>
-    <div class="card"><img src="images/portrait-4.jpg"></div>
-    <div class="card"><img src="images/portrait-5.jpg"></div>
-    <div class="card"><img src="images/portrait-6.jpg"></div>
-  </div>
+    <h2>Portraits</h2>
+    <div class="grid">
+        <img src="portrait-1.jpg">
+        <img src="portrait-2.jpg">
+        <img src="portrait-3.jpg">
+        <img src="portrait-4.jpg">
+        <img src="portrait-5.jpg">
+        <img src="portrait-6.jpg">
+    </div>
 </section>
 
-<!-- OIL PAINTING -->
+<!-- OIL PAINTING (7) -->
 <section>
-  <h2 class="section-title">Oil Painting</h2>
-  <div class="grid">
-    <div class="card"><img src="images/oil-painting-1.jpg"></div>
-    <div class="card"><img src="images/oil-painting-2.jpg"></div>
-    <div class="card"><img src="images/oil-painting-3.jpg"></div>
-    <div class="card"><img src="images/oil-painting-4.jpg"></div>
-    <div class="card"><img src="images/oil-painting-5.jpg"></div>
-    <div class="card"><img src="images/oil-painting-6.jpg"></div>
-    <div class="card"><img src="images/oil-painting-7.jpg"></div>
-  </div>
+    <h2>Oil Painting</h2>
+    <div class="grid">
+        <img src="oilpainting-1.jpg">
+        <img src="oilpainting-2.jpg">
+        <img src="oilpainting-3.jpg">
+        <img src="oilpainting-4.jpg">
+        <img src="oilpainting-5.jpg">
+        <img src="oilpainting-6.jpg">
+        <img src="oilpainting-7.jpg">
+    </div>
 </section>
 
-<!-- CHARCOAL STUDY -->
+<!-- CHARCOAL STUDY (4) -->
 <section>
-  <h2 class="section-title">Charcoal Study</h2>
-  <div class="grid">
-    <div class="card"><img src="images/charcoal-study-1.jpg"></div>
-    <div class="card"><img src="images/charcoal-study-2.jpg"></div>
-    <div class="card"><img src="images/charcoal-study-3.jpg"></div>
-    <div class="card"><img src="images/charcoal-study-4.jpg"></div>
-  </div>
+    <h2>Charcoal Study</h2>
+    <div class="grid">
+        <img src="charcoal-study-1.jpg">
+        <img src="charcoal-study-2.jpg">
+        <img src="charcoal-study-3.jpg">
+        <img src="charcoal-study-4.jpg">
+    </div>
 </section>
 
-<!-- MURAL -->
+<!-- MURAL (1) -->
 <section>
-  <h2 class="section-title">Mural Work</h2>
-  <div class="grid">
-    <div class="card"><img src="images/mural-1.jpg"></div>
-  </div>
+    <h2>Mural Work</h2>
+    <div class="grid">
+        <img src="mural-1.jpg">
+    </div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact">
-  <h2 class="section-title">Contact</h2>
+    <h2>Contact</h2>
 
-  <a href="https://www.instagram.com/resonancestudios001?igsh=MTA3Z2ZjMHppNGkzbg==" target="_blank">
-    Instagram
-  </a>
+    <a href="https://www.instagram.com/resonancestudios001?igsh=MTA3Z2ZjMHppNGkzbg==">
+        Instagram
+    </a>
 
-  <a href="https://wa.me/232XXXXXXXX" target="_blank">
-    WhatsApp
-  </a>
+    <a href="https://wa.me/232XXXXXXXX">
+        WhatsApp
+    </a>
 
-  <a href="mailto:resonancestudios@email.com">
-    Email Commission
-  </a>
+    <a href="mailto:resonancestudios@email.com">
+        Commission Me
+    </a>
 </section>
 
 </body>
 </html>
+
