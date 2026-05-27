@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commission - Resonance Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #0d1b2a;
+            --primary-blue: #1a3a52;
+            --accent-blue: #2a5a7f;
+            --light-accent: #5a8fb8;
+            --coral: #FF6B6B;
+            --gold: #FFD700;
+            --warm-orange: #FF9500;
+            --text-light: #f8f9fa;
+            --text-muted: #b0b8c5;
+            --bg-gradient: linear-gradient(135deg, #0d1b2a 0%, #1a3a52 30%, #2a5a7f 60%, #3d6b94 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-light);
+            background: var(--bg-gradient);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 5%;
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.95), rgba(26, 58, 82, 0.92));
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(90, 143, 184, 0.25);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #5a8fb8 0%, #FFD700 50%, #f8f9fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #5a8fb8, #FFD700);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            margin-top: 100px;
+            padding-bottom: 3rem;
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 3rem 5%;
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.6), rgba(26, 58, 82, 0.5));
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .page-title h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .page-title p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .page-section {
+            padding: 5rem 5%;
+            border-top: 1px solid rgba(90, 143, 184, 0.15);
+            position: relative;
+        }
+
+        .page-section:nth-child(odd) {
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.8), rgba(26, 58, 82, 0.7), rgba(42, 90, 127, 0.5));
+        }
+
+        .page-section:nth-child(even) {
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.6), rgba(26, 58, 82, 0.5), rgba(42, 90, 127, 0.4));
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #FFD700, #FF9500);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* PROCESS SECTION */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            background: rgba(90, 143, 184, 0.08);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(90, 143, 184, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            background: rgba(90, 143, 184, 0.15);
+            transform: translateY(-5px);
+            border-color: #FFD700;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+        }
+
+        .step:hover::before {
+            top: -30%;
+            right: -30%;
+        }
+
+        .step-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            font-family: 'Cormorant Garamond', serif;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step h3 {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step p {
+            color: var(--text-muted);
+            line-height: 1.9;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, rgba(26, 58, 82, 0.5), rgba(45, 90, 140, 0.4));
+            border-top: 1px solid rgba(90, 143, 184, 0.15);
+        }
+
+        .appointment-notice {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            border-left: 5px solid var(--coral);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .appointment-notice p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-block {
+            background: rgba(90, 143, 184, 0.08);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #5a8fb8;
+            border: 1px solid rgba(90, 143, 184, 0.15);
+            border-left: 5px solid #5a8fb8;
+            transition: all 0.3s ease;
+        }
+
+        .info-block:hover {
+            background: rgba(90, 143, 184, 0.15);
+            transform: translateY(-5px);
+            border-left-color: #FFD700;
+        }
+
+        .info-block h4 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .info-block p {
+            color: var(--text-muted);
+            word-break: break-all;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-block a {
+            color: #5a8fb8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-block a:hover {
+            color: #FFD700;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFD700, #FF9500);
+            color: #0d1b2a;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.8rem;
+            border: 2px solid #FFD700;
+            font-weight: bold;
+        }
+
+        .social-btn i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(135deg, #FF9500, #FF6B6B);
+            border-color: #FF6B6B;
+        }
+
+        .contact-form {
+            background: rgba(90, 143, 184, 0.08);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 1px solid rgba(90, 143, 184, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.7rem;
+            color: #FFD700;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(13, 27, 42, 0.5);
+            border: 1px solid rgba(90, 143, 184, 0.3);
+            border-radius: 10px;
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FFD700;
+            background: rgba(13, 27, 42, 0.7);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 1.1rem;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF9500 50%, #FFD700 100%);
+            color: #0d1b2a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        /* FOOTER */
+        footer {
+            background: rgba(13, 27, 42, 0.95);
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(90, 143, 184, 0.15);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f8f9fa;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            main {
+                margin-top: 80px;
+            }
+
+            .page-title h1 {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .social-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">RESONANCE STUDIOS</a>
+            <nav class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="commission.html">Commission</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE TITLE -->
+    <div class="page-title">
+        <h1>Start Your Commission</h1>
+        <p>Let's create something meaningful together</p>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HOW WE WORK SECTION -->
+        <section class="page-section">
+            <div class="section-container">
+                <h2 class="section-title">From Idea to Finished Work</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Consultation</h3>
+                        <p>We discuss your idea, reference, and the meaning behind the work.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Concept Development</h3>
+                        <p>We define direction—emotion, composition, symbolism, and style.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Creation Process</h3>
+                        <p>The work is developed with attention to detail, feeling, and intention.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Final Delivery</h3>
+                        <p>The completed piece is refined, reviewed, and delivered with care.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact" id="contact">
+            <div class="section-container">
+                <h2 class="section-title">Get in Touch</h2>
+
+                <div class="appointment-notice">
+                    <p>📅 Meetings are by appointment only. Please reach out to schedule your consultation.</p>
+                </div>
+
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; font-size: 1.05rem;">Start a commission, discuss a concept, or plan a creative project.</p>
+
+                <div class="contact-info">
+                    <div class="info-block">
+                        <h4>📞 Phone</h4>
+                        <p><a href="tel:+232765700707">+232 76 570070</a></p>
+                        <p><a href="tel:+232796848054">+232 79 684805</a></p>
+                    </div>
+                    <div class="info-block">
+                        <h4>✉️ Email</h4>
+                        <p><a href="mailto:Resonancestudios001@gmail.com">Resonancestudios001@gmail.com</a></p>
+                    </div>
+                    <div class="info-block">
+                        <h4>📍 Studio Address</h4>
+                        <p>22 Pultney Street</p>
+                    </div>
+                </div>
+
+                <div class="info-block" style="text-align: center; margin-bottom: 3rem;">
+                    <h4 style="margin-bottom: 1.5rem;">Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/resonancestudios001?igsh=MTA3Z2ZjMHppNGkzbg==" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/232765700707" target="_blank" rel="noopener noreferrer" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="project">Tell Us About Your Vision</label>
+                            <textarea id="project" name="project" required placeholder="Describe your project, ideas, and what you're looking to create..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Send Inquiry</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Resonance Studios. All rights reserved. | <a href="#contact">Contact</a> | <a href="index.html#about">About</a> | Meetings by Appointment Only</p>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('project').value;
+
+            const mailtoLink = `mailto:Resonancestudios001@gmail.com?subject=Commission Inquiry from ${name}&body=Name: ${name}%0DEmail: ${email}%0D%0DProject Details:%0D${message}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>
