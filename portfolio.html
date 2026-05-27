@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Resonance Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #0d1b2a;
+            --primary-blue: #1a3a52;
+            --accent-blue: #2a5a7f;
+            --light-accent: #5a8fb8;
+            --coral: #FF6B6B;
+            --gold: #FFD700;
+            --warm-orange: #FF9500;
+            --text-light: #f8f9fa;
+            --text-muted: #b0b8c5;
+            --bg-gradient: linear-gradient(135deg, #0d1b2a 0%, #1a3a52 30%, #2a5a7f 60%, #3d6b94 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-light);
+            background: var(--bg-gradient);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 5%;
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.95), rgba(26, 58, 82, 0.92));
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(90, 143, 184, 0.25);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #5a8fb8 0%, #FFD700 50%, #f8f9fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #5a8fb8, #FFD700);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            margin-top: 100px;
+            padding-bottom: 3rem;
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 3rem 5%;
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.6), rgba(26, 58, 82, 0.5));
+            border-bottom: 2px solid linear-gradient(90deg, #FFD700, #FF9500);
+        }
+
+        .page-title h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .page-title p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .portfolio-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.8), rgba(26, 58, 82, 0.7), rgba(42, 90, 127, 0.5));
+            border-top: 1px solid rgba(90, 143, 184, 0.15);
+            position: relative;
+        }
+
+        .portfolio-section:nth-child(odd) {
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.6), rgba(26, 58, 82, 0.5), rgba(42, 90, 127, 0.4));
+        }
+
+        .portfolio-section::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #FFD700, #FF9500, transparent);
+            opacity: 0.6;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            font-family: 'Cormorant Garamond', serif;
+            position: relative;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #FFD700, #FF9500);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            aspect-ratio: 1;
+            cursor: pointer;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(90, 143, 184, 0.2);
+            background: rgba(90, 143, 184, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.7), rgba(255, 149, 0, 0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            font-size: 3rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 3rem;
+            color: #FFD700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: none;
+            border: none;
+            z-index: 2001;
+        }
+
+        .lightbox-close:hover {
+            color: #FF9500;
+            transform: scale(1.2);
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: #FFD700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: none;
+            border: none;
+            padding: 1rem;
+            z-index: 2001;
+        }
+
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            color: #FF9500;
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: rgba(13, 27, 42, 0.95);
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(90, 143, 184, 0.15);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f8f9fa;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            main {
+                margin-top: 80px;
+            }
+
+            .page-title h1 {
+                font-size: 2rem;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .lightbox-close,
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">RESONANCE STUDIOS</a>
+            <nav class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="commission.html">Commission</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE TITLE -->
+    <div class="page-title">
+        <h1>Our Portfolio</h1>
+        <p>Explore our complete collection of fine art & visual storytelling</p>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- CONCEPT WORK -->
+        <section class="portfolio-section">
+            <div class="section-container">
+                <h2 class="section-title">Concept Work</h2>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openLightbox('concept-work-1.jpg')">
+                        <img src="concept-work-1.jpg" alt="Concept Work 1">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('concept-work-2.jpg')">
+                        <img src="concept-work-2.jpg" alt="Concept Work 2">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('concept-work-3.jpg')">
+                        <img src="concept-work-3.jpg" alt="Concept Work 3">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('concept-work-4.jpg')">
+                        <img src="concept-work-4.jpg" alt="Concept Work 4">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('concept-work-5.jpg')">
+                        <img src="concept-work-5.jpg" alt="Concept Work 5">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('concept-work-6.jpg')">
+                        <img src="concept-work-6.jpg" alt="Concept Work 6">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('concept-work-7.jpg')">
+                        <img src="concept-work-7.jpg" alt="Concept Work 7">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('concept-work-8.jpg')">
+                        <img src="concept-work-8.jpg" alt="Concept Work 8">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('concept-work-9.jpg')">
+                        <img src="concept-work-9.jpg" alt="Concept Work 9">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('concept-work-10.jpg')">
+                        <img src="concept-work-10.jpg" alt="Concept Work 10">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTRAITS -->
+        <section class="portfolio-section">
+            <div class="section-container">
+                <h2 class="section-title">Portraits</h2>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openLightbox('portrait-1.jpg')">
+                        <img src="portrait-1.jpg" alt="Portrait 1">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('portrait-2.jpg')">
+                        <img src="portrait-2.jpg" alt="Portrait 2">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('portrait-3.jpg')">
+                        <img src="portrait-3.jpg" alt="Portrait 3">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('portrait-4.jpg')">
+                        <img src="portrait-4.jpg" alt="Portrait 4">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('portrait-5.jpg')">
+                        <img src="portrait-5.jpg" alt="Portrait 5">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('portrait-6.jpg')">
+                        <img src="portrait-6.jpg" alt="Portrait 6">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OIL PAINTINGS -->
+        <section class="portfolio-section">
+            <div class="section-container">
+                <h2 class="section-title">Oil Paintings</h2>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openLightbox('oilpainting-1.jpg')">
+                        <img src="oilpainting-1.jpg" alt="Oil Painting 1">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('oilpainting-2.jpg')">
+                        <img src="oilpainting-2.jpg" alt="Oil Painting 2">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('oilpainting-3.jpg')">
+                        <img src="oilpainting-3.jpg" alt="Oil Painting 3">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('oilpainting-4.jpg')">
+                        <img src="oilpainting-4.jpg" alt="Oil Painting 4">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('oilpainting-5.jpg')">
+                        <img src="oilpainting-5.jpg" alt="Oil Painting 5">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('oilpainting-6.jpg')">
+                        <img src="oilpainting-6.jpg" alt="Oil Painting 6">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('oilpainting-7.jpg')">
+                        <img src="oilpainting-7.jpg" alt="Oil Painting 7">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHARCOAL STUDIES -->
+        <section class="portfolio-section">
+            <div class="section-container">
+                <h2 class="section-title">Charcoal Studies</h2>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openLightbox('charcoal-study-1.jpg')">
+                        <img src="charcoal-study-1.jpg" alt="Charcoal Study 1">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('charcoal-study-2.jpg')">
+                        <img src="charcoal-study-2.jpg" alt="Charcoal Study 2">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('charcoal-study-3.jpg')">
+                        <img src="charcoal-study-3.jpg" alt="Charcoal Study 3">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('charcoal-study-4.jpg')">
+                        <img src="charcoal-study-4.jpg" alt="Charcoal Study 4">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MURAL WORK -->
+        <section class="portfolio-section">
+            <div class="section-container">
+                <h2 class="section-title">Mural Work</h2>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openLightbox('mural-1.jpg')">
+                        <img src="mural-1.jpg" alt="Mural Work">
+                        <div class="gallery-overlay">🔍</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <div class="lightbox-content">
+            <button class="lightbox-prev" onclick="prevImage()">❮</button>
+            <img class="lightbox-image" id="lightboxImage" src="" alt="">
+            <button class="lightbox-next" onclick="nextImage()">❯</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Resonance Studios. All rights reserved. | <a href="commission.html#contact">Contact</a> | <a href="index.html#about">About</a> | Meetings by Appointment Only</p>
+    </footer>
+
+    <script>
+        const allImages = [
+            'concept-work-1.jpg', 'concept-work-2.jpg', 'concept-work-3.jpg', 'concept-work-4.jpg', 'concept-work-5.jpg',
+            'concept-work-6.jpg', 'concept-work-7.jpg', 'concept-work-8.jpg', 'concept-work-9.jpg', 'concept-work-10.jpg',
+            'portrait-1.jpg', 'portrait-2.jpg', 'portrait-3.jpg', 'portrait-4.jpg', 'portrait-5.jpg', 'portrait-6.jpg',
+            'oilpainting-1.jpg', 'oilpainting-2.jpg', 'oilpainting-3.jpg', 'oilpainting-4.jpg', 'oilpainting-5.jpg', 'oilpainting-6.jpg', 'oilpainting-7.jpg',
+            'charcoal-study-1.jpg', 'charcoal-study-2.jpg', 'charcoal-study-3.jpg', 'charcoal-study-4.jpg',
+            'mural-1.jpg'
+        ];
+
+        let currentImageIndex = 0;
+
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            lightboxImage.src = imageSrc;
+            currentImageIndex = allImages.indexOf(imageSrc);
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % allImages.length;
+            document.getElementById('lightboxImage').src = allImages[currentImageIndex];
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + allImages.length) % allImages.length;
+            document.getElementById('lightboxImage').src = allImages[currentImageIndex];
+        }
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            } else if (event.key === 'ArrowRight') {
+                nextImage();
+            } else if (event.key === 'ArrowLeft') {
+                prevImage();
+            }
+        });
+
+        // Close lightbox when clicking outside image
+        document.getElementById('lightbox').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
