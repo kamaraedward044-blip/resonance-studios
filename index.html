@@ -19,8 +19,9 @@
             --primary-blue: #1a3a52;
             --accent-blue: #2a5a7f;
             --light-accent: #5a8fb8;
-            --mid-accent: #4a7da5;
-            --subtle-accent: #3d6b94;
+            --coral: #FF6B6B;
+            --gold: #FFD700;
+            --warm-orange: #FF9500;
             --text-light: #f8f9fa;
             --text-muted: #b0b8c5;
             --bg-gradient: linear-gradient(135deg, #0d1b2a 0%, #1a3a52 30%, #2a5a7f 60%, #3d6b94 100%);
@@ -49,11 +50,11 @@
             top: 0;
             width: 100%;
             padding: 2rem 5%;
-            background: linear-gradient(135deg, rgba(13, 27, 42, 0.92), rgba(26, 58, 82, 0.88));
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.95), rgba(26, 58, 82, 0.92));
             backdrop-filter: blur(15px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(90, 143, 184, 0.15);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(90, 143, 184, 0.25);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .header-content {
@@ -69,7 +70,7 @@
             font-weight: 700;
             letter-spacing: 3px;
             font-family: 'Cormorant Garamond', serif;
-            background: linear-gradient(135deg, #5a8fb8 0%, #4a7da5 50%, #f8f9fa 100%);
+            background: linear-gradient(135deg, #5a8fb8 0%, #FFD700 50%, #f8f9fa 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -81,7 +82,7 @@
             margin-left: 2.5rem;
             font-size: 0.9rem;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
             letter-spacing: 0.5px;
         }
@@ -93,8 +94,12 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #5a8fb8, #3d6b94);
+            background: linear-gradient(90deg, #5a8fb8, #FFD700);
             transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FFD700;
         }
 
         nav a:hover::after {
@@ -114,7 +119,7 @@
             align-items: center;
             justify-content: center;
             padding: 3rem 5%;
-            background: linear-gradient(135deg, rgba(13, 27, 42, 0.4), rgba(42, 90, 127, 0.3)),
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.55), rgba(42, 90, 127, 0.45)),
                         url('hero-image.jpg') center/cover no-repeat;
             position: relative;
             overflow: hidden;
@@ -127,7 +132,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(13, 27, 42, 0.5), rgba(42, 90, 127, 0.3));
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.6), rgba(42, 90, 127, 0.4));
             z-index: 1;
         }
 
@@ -145,7 +150,7 @@
             margin-bottom: 0.5rem;
             letter-spacing: -1px;
             line-height: 1.1;
-            background: linear-gradient(135deg, #f8f9fa 0%, #5a8fb8 60%, #3d6b94 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #FFD700 40%, #5a8fb8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -153,7 +158,7 @@
 
         .hero-subtitle {
             font-size: 1.5rem;
-            color: #5a8fb8;
+            color: #FFD700;
             margin-bottom: 1.5rem;
             font-weight: 400;
             letter-spacing: 2px;
@@ -162,7 +167,7 @@
 
         .hero-description {
             font-size: 1.1rem;
-            color: var(--text-muted);
+            color: var(--text-light);
             margin-bottom: 2.5rem;
             max-width: 700px;
             margin-left: auto;
@@ -193,14 +198,15 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #5a8fb8 0%, #4a7da5 50%, #3d6b94 100%);
-            color: white;
-            border: 2px solid #5a8fb8;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF9500 50%, #FFD700 100%);
+            color: #0d1b2a;
+            border: 2px solid #FF6B6B;
+            font-weight: 700;
         }
 
         .btn-primary:hover {
             transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(90, 143, 184, 0.4);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.5);
         }
 
         .btn-secondary {
@@ -220,6 +226,18 @@
             padding: 6rem 5%;
             background: linear-gradient(135deg, rgba(13, 27, 42, 0.6), rgba(26, 58, 82, 0.5), rgba(42, 90, 127, 0.4));
             border-top: 1px solid rgba(90, 143, 184, 0.15);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #FFD700, #FF9500, transparent);
+            opacity: 0.6;
         }
 
         .section-container {
@@ -235,6 +253,17 @@
             color: var(--text-light);
             letter-spacing: 1px;
             font-family: 'Cormorant Garamond', serif;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #FFD700, #FF9500);
+            margin: 1rem auto 0;
+            border-radius: 2px;
         }
 
         .about-content {
@@ -254,7 +283,7 @@
         }
 
         .about-highlight {
-            color: #5a8fb8;
+            color: #FF9500;
             font-weight: 600;
         }
 
@@ -282,13 +311,32 @@
             border: 1px solid rgba(90, 143, 184, 0.15);
             border-left: 5px solid #5a8fb8;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -30px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 50%;
+            transition: all 0.4s ease;
         }
 
         .service-card:hover {
             background: rgba(90, 143, 184, 0.15);
             transform: translateY(-8px);
-            border-left-color: #f8f9fa;
-            box-shadow: 0 15px 45px rgba(90, 143, 184, 0.2);
+            border-left-color: #FFD700;
+            box-shadow: 0 15px 45px rgba(90, 143, 184, 0.2), 0 0 30px rgba(255, 107, 107, 0.1);
+        }
+
+        .service-card:hover::before {
+            right: -10px;
+            background: rgba(255, 107, 107, 0.15);
         }
 
         .service-card h3 {
@@ -296,12 +344,16 @@
             margin-bottom: 1rem;
             color: var(--text-light);
             font-family: 'Cormorant Garamond', serif;
+            position: relative;
+            z-index: 1;
         }
 
         .service-card p {
             color: var(--text-muted);
             line-height: 1.9;
             font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
         }
 
         /* PRICING SECTION */
@@ -309,6 +361,18 @@
             padding: 6rem 5%;
             background: linear-gradient(135deg, rgba(13, 27, 42, 0.6), rgba(26, 58, 82, 0.5), rgba(42, 90, 127, 0.4));
             border-top: 1px solid rgba(90, 143, 184, 0.15);
+            position: relative;
+        }
+
+        .pricing::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #FF9500, #FFD700);
+            opacity: 0.6;
         }
 
         .pricing-grid {
@@ -327,12 +391,30 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 20%;
+            right: 20%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #FF9500, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .price-card:hover {
             background: rgba(90, 143, 184, 0.15);
-            border-color: #5a8fb8;
+            border-color: #FFD700;
             transform: translateY(-5px);
+            border-top: 2px solid #FF9500;
+        }
+
+        .price-card:hover::before {
+            opacity: 1;
         }
 
         .price-card h4 {
@@ -344,258 +426,41 @@
 
         .price-amount {
             font-size: 2rem;
-            color: var(--text-light);
+            color: #FFD700;
             font-weight: 700;
             margin-bottom: 1rem;
             font-family: 'Cormorant Garamond', serif;
         }
 
-        /* PORTFOLIO SECTION */
-        .portfolio {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, rgba(13, 27, 42, 0.8), rgba(26, 58, 82, 0.7), rgba(42, 90, 127, 0.5));
-            border-top: 1px solid rgba(90, 143, 184, 0.15);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .grid img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 15px;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(90, 143, 184, 0.2);
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-        }
-
-        .grid img:hover {
-            transform: scale(1.04);
-            box-shadow: 0 15px 45px rgba(90, 143, 184, 0.3);
-            border-color: #5a8fb8;
-        }
-
-        /* HOW WE WORK SECTION */
-        .process {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, rgba(13, 27, 42, 0.6), rgba(26, 58, 82, 0.5), rgba(42, 90, 127, 0.4));
-            border-top: 1px solid rgba(90, 143, 184, 0.15);
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .step {
+        /* CTA SECTION */
+        .cta {
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 149, 0, 0.1), rgba(255, 215, 0, 0.05));
             text-align: center;
-            background: rgba(90, 143, 184, 0.08);
-            padding: 2.5rem;
-            border-radius: 15px;
-            border: 1px solid rgba(90, 143, 184, 0.15);
-            transition: all 0.3s ease;
+            border-top: 1px solid rgba(255, 215, 0, 0.3);
+            border-bottom: 1px solid rgba(255, 107, 107, 0.3);
         }
 
-        .step:hover {
-            background: rgba(90, 143, 184, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .step-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #5a8fb8;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .step h3 {
-            font-size: 1.4rem;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .step p {
-            color: var(--text-muted);
-            line-height: 1.9;
-            font-size: 0.95rem;
-        }
-
-        /* CLOSING STATEMENT SECTION */
-        .closing {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, rgba(13, 27, 42, 0.9), rgba(45, 90, 140, 0.7));
-            text-align: center;
-            border-top: 1px solid rgba(90, 143, 184, 0.2);
-            border-bottom: 1px solid rgba(90, 143, 184, 0.2);
-        }
-
-        .closing h2 {
-            font-size: 2.8rem;
-            font-weight: 600;
+        .cta h2 {
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
             color: var(--text-light);
-            font-family: 'Cormorant Garamond', serif;
         }
 
-        .closing p {
-            font-size: 1.2rem;
+        .cta p {
+            font-size: 1.1rem;
             color: var(--text-muted);
-            max-width: 800px;
-            margin: 1rem auto;
-            line-height: 2;
-            font-weight: 300;
-        }
-
-        /* CONTACT SECTION */
-        .contact {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, rgba(26, 58, 82, 0.5), rgba(45, 90, 140, 0.4));
-            border-top: 1px solid rgba(90, 143, 184, 0.15);
-        }
-
-        .contact-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .appointment-notice {
-            background: rgba(90, 143, 184, 0.15);
-            border: 1px solid rgba(90, 143, 184, 0.3);
-            border-left: 5px solid #5a8fb8;
-            padding: 1.5rem;
-            border-radius: 10px;
             margin-bottom: 2rem;
-            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .appointment-notice p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            margin: 0;
-            font-weight: 500;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .info-block {
-            background: rgba(90, 143, 184, 0.08);
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 5px solid #5a8fb8;
-            border: 1px solid rgba(90, 143, 184, 0.15);
-            border-left: 5px solid #5a8fb8;
-            transition: all 0.3s ease;
-        }
-
-        .info-block:hover {
-            background: rgba(90, 143, 184, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .info-block h4 {
-            color: #5a8fb8;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .info-block p {
-            color: var(--text-muted);
-            word-break: break-all;
-            margin-bottom: 0.5rem;
-        }
-
-        .social-links {
+        .cta-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .social-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #5a8fb8;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
-        }
-
-        .social-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(90, 143, 184, 0.3);
-            background: #4a7da5;
-        }
-
-        .contact-form {
-            background: rgba(90, 143, 184, 0.08);
-            padding: 3rem;
-            border-radius: 15px;
-            border: 1px solid rgba(90, 143, 184, 0.15);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.7rem;
-            color: #5a8fb8;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(13, 27, 42, 0.5);
-            border: 1px solid rgba(90, 143, 184, 0.3);
-            border-radius: 10px;
-            color: var(--text-light);
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #5a8fb8;
-            background: rgba(13, 27, 42, 0.7);
-            box-shadow: 0 0 15px rgba(90, 143, 184, 0.2);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-group button {
-            width: 100%;
+            flex-wrap: wrap;
         }
 
         /* FOOTER */
@@ -609,7 +474,7 @@
         }
 
         footer a {
-            color: #5a8fb8;
+            color: #FFD700;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -648,20 +513,12 @@
                 max-width: 300px;
             }
 
-            .contact-form {
-                padding: 2rem;
-            }
-
             .section-title {
                 font-size: 2rem;
             }
 
             .hero h1 {
                 font-size: 2.5rem;
-            }
-
-            .grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
         }
 
@@ -691,8 +548,8 @@
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
                 <a href="#pricing">Pricing</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#contact">Contact</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="commission.html">Commission</a>
             </nav>
         </div>
     </header>
@@ -704,8 +561,8 @@
             <p class="hero-subtitle">Creating Timeless Legacies</p>
             <p class="hero-description">Portraits and visuals that capture emotion, identity, and presence—not just appearance.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Request a Commission</a>
-                <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
+                <a href="commission.html" class="btn btn-primary">Request a Commission</a>
+                <a href="portfolio.html" class="btn btn-secondary">View Portfolio</a>
             </div>
         </div>
     </section>
@@ -804,191 +661,21 @@
         </div>
     </section>
 
-    <!-- CONCEPT WORK -->
-    <section class="portfolio" id="portfolio">
+    <!-- CTA SECTION -->
+    <section class="cta">
         <div class="section-container">
-            <h2 class="section-title">Concept Work</h2>
-            <div class="grid">
-                <img src="concept-1.jpg">
-                <img src="concept-2.jpg">
-                <img src="concept-3.jpg">
-                <img src="concept-4.jpg">
-                <img src="concept-5.jpg">
-                <img src="concept-6.jpg">
-                <img src="concept-7.jpg">
-                <img src="concept-8.jpg">
-                <img src="concept-9.jpg">
-                <img src="concept-10.jpg">
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTRAITS -->
-    <section class="portfolio">
-        <div class="section-container">
-            <h2 class="section-title">Portraits</h2>
-            <div class="grid">
-                <img src="portrait-1.jpg">
-                <img src="portrait-2.jpg">
-                <img src="portrait-3.jpg">
-                <img src="portrait-4.jpg">
-                <img src="portrait-5.jpg">
-                <img src="portrait-6.jpg">
-            </div>
-        </div>
-    </section>
-
-    <!-- OIL PAINTINGS -->
-    <section class="portfolio">
-        <div class="section-container">
-            <h2 class="section-title">Oil Paintings</h2>
-            <div class="grid">
-                <img src="oilpainting-1.jpg">
-                <img src="oilpainting-2.jpg">
-                <img src="oilpainting-3.jpg">
-                <img src="oilpainting-4.jpg">
-                <img src="oilpainting-5.jpg">
-                <img src="oilpainting-6.jpg">
-                <img src="oilpainting-7.jpg">
-            </div>
-        </div>
-    </section>
-
-    <!-- CHARCOAL STUDIES -->
-    <section class="portfolio">
-        <div class="section-container">
-            <h2 class="section-title">Charcoal Studies</h2>
-            <div class="grid">
-                <img src="charcoal-study-1.jpg">
-                <img src="charcoal-study-2.jpg">
-                <img src="charcoal-study-3.jpg">
-                <img src="charcoal-study-4.jpg">
-            </div>
-        </div>
-    </section>
-
-    <!-- MURAL WORK -->
-    <section class="portfolio">
-        <div class="section-container">
-            <h2 class="section-title">Mural Work</h2>
-            <div class="grid">
-                <img src="mural-1.jpg">
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW WE WORK SECTION -->
-    <section class="process" id="process">
-        <div class="section-container">
-            <h2 class="section-title">From Idea to Finished Work</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Consultation</h3>
-                    <p>We discuss your idea, reference, and the meaning behind the work.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Concept Development</h3>
-                    <p>We define direction—emotion, composition, symbolism, and style.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Creation Process</h3>
-                    <p>The work is developed with attention to detail, feeling, and intention.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Final Delivery</h3>
-                    <p>The completed piece is refined, reviewed, and delivered with care.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CLOSING STATEMENT SECTION -->
-    <section class="closing">
-        <div class="section-container">
-            <h2>Let's Create Something Meaningful</h2>
-            <p>Not just visuals. Not just decoration.</p>
-            <p>But work that holds identity, emotion, and story in lasting form.</p>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section class="contact" id="contact">
-        <div class="contact-content">
-            <h2 class="section-title">Get in Touch</h2>
-            
-            <div class="appointment-notice">
-                <p>📅 Meetings are by appointment only. Please reach out to schedule your consultation.</p>
-            </div>
-
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem;">Start a commission, discuss a concept, or plan a creative project.</p>
-            
-            <div class="contact-info">
-                <div class="info-block">
-                    <h4>📞 Phone</h4>
-                    <p><a href="tel:076570070" style="color: #5a8fb8; text-decoration: none;">076 570070</a></p>
-                    <p><a href="tel:079684805" style="color: #5a8fb8; text-decoration: none;">079 684805</a></p>
-                </div>
-                <div class="info-block">
-                    <h4>✉️ Email</h4>
-                    <p><a href="mailto:Resonancestudios001@gmail.com" style="color: #5a8fb8; text-decoration: none;">Resonancestudios001@gmail.com</a></p>
-                </div>
-                <div class="info-block">
-                    <h4>📍 Studio Address</h4>
-                    <p>22 Pultney Street</p>
-                </div>
-            </div>
-
-            <div class="info-block" style="text-align: center; margin-bottom: 3rem;">
-                <h4 style="margin-bottom: 1.5rem;">Connect With Us</h4>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/resonancestudios001?igsh=MTA3Z2ZjMHppNGkzbg==" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram">
-                        📷
-                    </a>
-                    <a href="https://wa.me/0765700707" class="social-btn" title="WhatsApp">
-                        💬
-                    </a>
-                </div>
-            </div>
-
-            <div class="contact-form">
-                <form onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="project">Tell Us About Your Vision</label>
-                        <textarea id="project" name="project" required placeholder="Describe your project, ideas, and what you're looking to create..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Inquiry</button>
-                </form>
+            <h2>Ready to Create Something Meaningful?</h2>
+            <p>Explore our full portfolio or start your commission today. Let's bring your vision to life.</p>
+            <div class="cta-buttons">
+                <a href="portfolio.html" class="btn btn-secondary">View Full Portfolio</a>
+                <a href="commission.html" class="btn btn-primary">Start Commission</a>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2024 Resonance Studios. All rights reserved. | Meetings are by appointment only.</p>
+        <p>&copy; 2024 Resonance Studios. All rights reserved. | <a href="commission.html#contact">Contact</a> | <a href="#about">About</a> | Meetings by Appointment Only</p>
     </footer>
-
-    <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('project').value;
-            
-            const mailtoLink = `mailto:Resonancestudios001@gmail.com?subject=Commission Inquiry from ${name}&body=Name: ${name}%0DEmail: ${email}%0D%0DProject Details:%0D${message}`;
-            window.location.href = mailtoLink;
-        }
-    </script>
 </body>
 </html>
