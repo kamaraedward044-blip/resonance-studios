@@ -343,6 +343,36 @@
             to { opacity: 1; }
         }
 
+        /* BACK TO TOP BUTTON */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #FFD700, #FF9500);
+            color: #0d1b2a;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             header {
@@ -411,43 +441,43 @@
                 <h2 class="section-title">Concept Work</h2>
                 <div class="gallery">
                     <div class="gallery-item" onclick="openLightbox('concept-work-1.jpg')">
-                        <img src="concept-work-1.jpg" alt="Concept Work 1">
+                        <img src="concept-work-1.jpg" alt="Concept Work 1" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('concept-work-2.jpg')">
-                        <img src="concept-work-2.jpg" alt="Concept Work 2">
+                        <img src="concept-work-2.jpg" alt="Concept Work 2" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('concept-work-3.jpg')">
-                        <img src="concept-work-3.jpg" alt="Concept Work 3">
+                        <img src="concept-work-3.jpg" alt="Concept Work 3" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('concept-work-4.jpg')">
-                        <img src="concept-work-4.jpg" alt="Concept Work 4">
+                        <img src="concept-work-4.jpg" alt="Concept Work 4" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('concept-work-5.jpg')">
-                        <img src="concept-work-5.jpg" alt="Concept Work 5">
+                        <img src="concept-work-5.jpg" alt="Concept Work 5" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('concept-work-6.jpg')">
-                        <img src="concept-work-6.jpg" alt="Concept Work 6">
+                        <img src="concept-work-6.jpg" alt="Concept Work 6" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('concept-work-7.jpg')">
-                        <img src="concept-work-7.jpg" alt="Concept Work 7">
+                        <img src="concept-work-7.jpg" alt="Concept Work 7" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('concept-work-8.jpg')">
-                        <img src="concept-work-8.jpg" alt="Concept Work 8">
+                        <img src="concept-work-8.jpg" alt="Concept Work 8" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('concept-work-9.jpg')">
-                        <img src="concept-work-9.jpg" alt="Concept Work 9">
+                        <img src="concept-work-9.jpg" alt="Concept Work 9" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('concept-work-10.jpg')">
-                        <img src="concept-work-10.jpg" alt="Concept Work 10">
+                        <img src="concept-work-10.jpg" alt="Concept Work 10" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                 </div>
@@ -460,27 +490,27 @@
                 <h2 class="section-title">Portraits</h2>
                 <div class="gallery">
                     <div class="gallery-item" onclick="openLightbox('portrait-1.jpg')">
-                        <img src="portrait-1.jpg" alt="Portrait 1">
+                        <img src="portrait-1.jpg" alt="Portrait 1" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('portrait-2.jpg')">
-                        <img src="portrait-2.jpg" alt="Portrait 2">
+                        <img src="portrait-2.jpg" alt="Portrait 2" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('portrait-3.jpg')">
-                        <img src="portrait-3.jpg" alt="Portrait 3">
+                        <img src="portrait-3.jpg" alt="Portrait 3" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('portrait-4.jpg')">
-                        <img src="portrait-4.jpg" alt="Portrait 4">
+                        <img src="portrait-4.jpg" alt="Portrait 4" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('portrait-5.jpg')">
-                        <img src="portrait-5.jpg" alt="Portrait 5">
+                        <img src="portrait-5.jpg" alt="Portrait 5" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('portrait-6.jpg')">
-                        <img src="portrait-6.jpg" alt="Portrait 6">
+                        <img src="portrait-6.jpg" alt="Portrait 6" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                 </div>
@@ -493,31 +523,31 @@
                 <h2 class="section-title">Oil Paintings</h2>
                 <div class="gallery">
                     <div class="gallery-item" onclick="openLightbox('oilpainting-1.jpg')">
-                        <img src="oilpainting-1.jpg" alt="Oil Painting 1">
+                        <img src="oilpainting-1.jpg" alt="Oil Painting 1" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('oilpainting-2.jpg')">
-                        <img src="oilpainting-2.jpg" alt="Oil Painting 2">
+                        <img src="oilpainting-2.jpg" alt="Oil Painting 2" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('oilpainting-3.jpg')">
-                        <img src="oilpainting-3.jpg" alt="Oil Painting 3">
+                        <img src="oilpainting-3.jpg" alt="Oil Painting 3" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('oilpainting-4.jpg')">
-                        <img src="oilpainting-4.jpg" alt="Oil Painting 4">
+                        <img src="oilpainting-4.jpg" alt="Oil Painting 4" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('oilpainting-5.jpg')">
-                        <img src="oilpainting-5.jpg" alt="Oil Painting 5">
+                        <img src="oilpainting-5.jpg" alt="Oil Painting 5" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('oilpainting-6.jpg')">
-                        <img src="oilpainting-6.jpg" alt="Oil Painting 6">
+                        <img src="oilpainting-6.jpg" alt="Oil Painting 6" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('oilpainting-7.jpg')">
-                        <img src="oilpainting-7.jpg" alt="Oil Painting 7">
+                        <img src="oilpainting-7.jpg" alt="Oil Painting 7" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                 </div>
@@ -530,19 +560,19 @@
                 <h2 class="section-title">Charcoal Studies</h2>
                 <div class="gallery">
                     <div class="gallery-item" onclick="openLightbox('charcoal-study-1.jpg')">
-                        <img src="charcoal-study-1.jpg" alt="Charcoal Study 1">
+                        <img src="charcoal-study-1.jpg" alt="Charcoal Study 1" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('charcoal-study-2.jpg')">
-                        <img src="charcoal-study-2.jpg" alt="Charcoal Study 2">
+                        <img src="charcoal-study-2.jpg" alt="Charcoal Study 2" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('charcoal-study-3.jpg')">
-                        <img src="charcoal-study-3.jpg" alt="Charcoal Study 3">
+                        <img src="charcoal-study-3.jpg" alt="Charcoal Study 3" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                     <div class="gallery-item" onclick="openLightbox('charcoal-study-4.jpg')">
-                        <img src="charcoal-study-4.jpg" alt="Charcoal Study 4">
+                        <img src="charcoal-study-4.jpg" alt="Charcoal Study 4" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                 </div>
@@ -555,7 +585,7 @@
                 <h2 class="section-title">Mural Work</h2>
                 <div class="gallery">
                     <div class="gallery-item" onclick="openLightbox('mural-1.jpg')">
-                        <img src="mural-1.jpg" alt="Mural Work">
+                        <img src="mural-1.jpg" alt="Mural Work" loading="lazy">
                         <div class="gallery-overlay">🔍</div>
                     </div>
                 </div>
@@ -572,6 +602,9 @@
             <button class="lightbox-next" onclick="nextImage()">❯</button>
         </div>
     </div>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTop">↑</button>
 
     <!-- FOOTER -->
     <footer>
@@ -629,6 +662,24 @@
             if (event.target === this) {
                 closeLightbox();
             }
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>
